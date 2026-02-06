@@ -94,3 +94,118 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #ff4d6d, #ffb3c6, #ff758f);
+      background-size: 600% 600%;
+      animation: bgMove 10s ease infinite;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    @keyframes bgMove {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
+    }
+
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      color: white;
+      font-size: 32px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #fff; }
+      to { text-shadow: 0 0 20px #ffcccb; }
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yesBtn {
+      background: white;
+      color: #ff4d6d;
+    }
+
+    #noBtn {
+      background: #333;
+      color: white;
+      position: absolute;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 22px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Akriti 💖</h1>
+    <h2>Will you be my Valentine?</h2>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="yesClick()">Yes 💘</button>
+      <button id="noBtn" onmouseover="moveNo()">No 😜</button>
+    </div>
+  </div>
+
+  <!-- Floating hearts -->
+  <div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+  <div class="heart" style="left:25%; animation-delay:2s;">💗</div>
+  <div class="heart" style="left:40%; animation-delay:4s;">❤️</div>
+  <div class="heart" style="left:55%; animation-delay:1s;">💖</div>
+  <div class="heart" style="left:70%; animation-delay:3s;">❤️</div>
+  <div class="heart" style="left:85%; animation-delay:5s;">💘</div>
+
+  <script>
+    function moveNo() {
+      var noBtn = document.getElementById("noBtn");
+      var x = Math.random() * (window.innerWidth - 100);
+      var y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function yesClick() {
+      alert("Yay! 💖 I knew it 😍");
+    }
+  </script>
+
+</body>
+</html>
